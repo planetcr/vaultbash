@@ -19,8 +19,8 @@ do
     -b "$COOKIE" \
     --data-binary "q=%7B%221%22:%22%22,%222%22:%5B%22$USER%22%5D,%228%22:%5B1%5D,%2210%22:0,%2212%22:1,%2214%22:0,%2215%22:1%7D&n=$EXPORT_NAME-email&acl_expansion=false" \
     "https://ediscovery.google.com/discovery/matters/$MATTER_GUID/exports?hl=en" -o response.out
-	
-#	cat response.out
+	cat response.out
+	echo "----------------------------------------"
 	EMAIL_RESPONSE="unknown error"
 	
 	if grep -q SEARCH "response.out"; then
@@ -43,7 +43,8 @@ do
     --data-binary "q=%7B%221%22:%22%22,%222%22:%5B%22$USER%22%5D,%228%22:%5B2%5D,%2210%22:0,%2212%22:1,%2214%22:0,%2215%22:1%7D&n=$EXPORT_NAME-drive&acl_expansion=false" \
     "https://ediscovery.google.com/discovery/matters/$MATTER_GUID/exports?hl=en" -o response.out
 	
-#	cat response.out
+	cat response.out
+	echo "----------------------------------------"
 	DRIVE_RESPONSE="unknown error"
 	
 	if grep -q SEARCH "response.out"; then
